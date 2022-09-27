@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --watch",
-    "start": "webpack serve"
+    "build": " SET NODE_ENV=production&webpack",
+    "start": "webpack serve",
+    "build:watch": "webpack --watch"
   },
   "keywords": [
     "webpack",
-    "bable"
+    "bable",
+    "javascript"
   ],
   "author": "Andriejus Gataveckas",
   "license": "ISC",

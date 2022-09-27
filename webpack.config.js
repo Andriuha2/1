@@ -1,5 +1,17 @@
+const path = require("path");
+
+const mode =
+  process.env.NODE_ENV === "production" ? "production" : "development";
+console.log(mode);
+
 module.exports = {
-  mode: "development",
+  mode: mode,
+
+  entry: path.resolve(__dirname, "./src/index.js"),
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "public"),
+  },
 
   module: {
     rules: [
@@ -17,6 +29,6 @@ module.exports = {
   devtool: "source-map",
 
   devServer: {
-    static: "./dist",
+    static: "./public",
   },
 };
