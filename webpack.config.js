@@ -7,7 +7,7 @@ console.log(mode);
 module.exports = {
   mode: mode,
 
-  entry: path.resolve(__dirname, "./src/index.js"),
+  entry: path.resolve(__dirname, "./src/index.ts"),
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "public"),
@@ -16,14 +16,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         exclude: /node-modules/,
         use: {
-          //without additional bable settings, this will reference bablerc
+          //without additional babel settings, this will reference bablerc
           loader: "babel-loader",
         },
       },
     ],
+  },
+
+  resolve: {
+    extensions: [".ts", ".js"],
   },
 
   devtool: "source-map",
