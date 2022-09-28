@@ -1,4 +1,5 @@
 import getFullAvatar from "./getFullAvatar";
+import "./styles.scss";
 
 console.log("working");
 getFullAvatar();
